@@ -9,6 +9,7 @@ void mainScreenWidget::slotAddCons()
     editConsumption->setStyleSheet("font-size: 40px;");
     labelConsumption->hide();
     mainScreenLayout->replaceWidget(labelConsumption, editConsumption);
+
     connect(editConsumption, &QLineEdit::textChanged, this, [&](const QString& text) {
         buttonAdd->setEnabled(!text.isEmpty());
     });

@@ -44,7 +44,6 @@ mainScreenWidget::mainScreenWidget(QWidget *parent)
     mainScreenLayout->addWidget(buttonSettings, 0, Qt::AlignBottom);
 
     connect(buttonSettings, &QPushButton::clicked, this, &mainScreenWidget::signalOpenSettings);
-
     QDate currentDate = QDate::currentDate();
     QString curDateStr = currentDate.toString("dd.MM.yyyy");
     QDate lastDate;
@@ -115,7 +114,7 @@ mainScreenWidget::mainScreenWidget(QWidget *parent)
         float sum = (curCons + (days * daySalary));
         QString strSum;
         if(sum > 0){ strSum +="<font color='green'>+"; strSum += QString::number(sum); strSum += "</font>"; }
-        else {strSum += "<font color='red'>+"; strSum+=QString::number(sum); strSum += "</font>"; }
+        else {strSum += "<font color='red'>"; strSum+=QString::number(sum); strSum += "</font>"; }
         if(flagLabelConsumption) labelConsumption->setText(strSum);
 
         QFile fileCons1("Consumption");
